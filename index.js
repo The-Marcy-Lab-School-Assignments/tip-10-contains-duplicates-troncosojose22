@@ -13,19 +13,26 @@
 
 const containsDuplicate = (nums) => {
   //write your code here
+  // Create a frequency object
   const freq = {};
+  // loop through the nums array
   for (let i = 0; i < nums.length; i++) {
+    // if the current number is not in the object, initialize it with a value of 1
     if (!freq[nums[i]]) {
       freq[nums[i]] = 1;
       continue;
     }
+    // if the current object is in the object we add 1 to it
     freq[nums[i]]++;
   }
+  // loop through the nums array a second time
   for (let i = 0; i < nums.length; i++) {
+    // if the current number is in the frequency object with a value higher than 1, return true
     if (freq[nums[i]] > 1) {
       return true;
     }
   }
+  // if no duplicates were found, return false after the loop
   return false;
 };
 
