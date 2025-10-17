@@ -22,7 +22,7 @@ const containsDuplicate = (nums) => {
       freq[nums[i]] = 1;
       continue;
     }
-    // if the current object is in the object we add 1 to it
+    // if the current number is in the object we add 1 to it
     freq[nums[i]]++;
   }
   // loop through the nums array a second time
