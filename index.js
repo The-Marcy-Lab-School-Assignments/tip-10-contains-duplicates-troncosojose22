@@ -13,6 +13,20 @@
 
 const containsDuplicate = (nums) => {
   //write your code here
+  const freq = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (!freq[nums[i]]) {
+      freq[nums[i]] = 1;
+      continue;
+    }
+    freq[nums[i]]++;
+  }
+  for (let i = 0; i < nums.length; i++) {
+    if (freq[nums[i]] > 1) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // Export the function for testing
